@@ -1,0 +1,14 @@
+{
+  "aviso": "Montos orientativos en MXN. No constituyen cotización, tarifa cerrada ni dictamen epistemológico. Valores marcados PENDIENTE_APROBACION_USUARIO.",
+  "moneda": "MXN",
+  "iva": 0.16,
+  "estado": "PENDIENTE_APROBACION_USUARIO",
+  "niveles": {
+    "0": { "nombre": "Diagnóstico inicial", "base": 8000, "modulo": 1500 },
+    "1": { "nombre": "Básico", "base": 18000, "modulo": 2500 },
+    "2": { "nombre": "Estándar", "base": 36000, "modulo": 4000 },
+    "3": { "nombre": "Profesional", "base": 62000, "modulo": 5500 },
+    "4": { "nombre": "Corporativo", "base": 98000, "modulo": 7500 },
+    "5": { "nombre": "Proyecto personalizado", "base": null, "modulo": null }
+  }
+}

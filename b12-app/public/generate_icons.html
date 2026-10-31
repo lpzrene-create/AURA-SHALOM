@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iconos PWA — AURA Empresarial</title>
+    <style>
+      body { font-family: "Segoe UI", sans-serif; background: #F4F6F9; color: #1F2937; margin: 0; padding: 24px; }
+      h1 { font-size: 22px; }
+      canvas { background: #002B49; border-radius: 24px; }
+      button { min-height: 44px; padding: 0 16px; background: #002B49; color: #F4F6F9; border: 0; border-radius: 8px; }
+    </style>
+  </head>
+  <body>
+    <h1>Generar iconos 192 / 512</h1>
+    <p>Descarga PNG planos del sello (marino + dorado) para el manifiesto PWA.</p>
+    <p>
+      <button type="button" id="go">Descargar</button>
+    </p>
+    <script>
+      function draw(size) {
+        const c = document.createElement("canvas");
+        c.width = size; c.height = size;
+        const g = c.getContext("2d");
+        g.fillStyle = "#002B49";
+        g.beginPath();
+        g.roundRect(0, 0, size, size, size * 0.22);
+        g.fill();
+        g.strokeStyle = "#D4AF37";
+        g.lineWidth = size * 0.05;
+        g.beginPath();
+        g.arc(size/2, size/2, size * 0.34, 0, Math.PI * 2);
+        g.stroke();
+        g.fillStyle = "#D4AF37";
+        g.beginPath();
+        g.moveTo(size/2, size*0.2);
+        g.lineTo(size*0.58, size/2);
+        g.lineTo(size/2, size*0.8);
+        g.lineTo(size*0.42, size/2);
+        g.closePath();
+        g.fill();
+        return c.toDataURL("image/png");
+      }
+      document.getElementById("go").onclick = () => {
+        for (const size of [192, 512]) {
+          const a = document.createElement("a");
+          a.href = draw(size);
+          a.download = "icon-" + size + ".png";
+          a.click();
+        }
+      };
+    </script>
+  </body>
+</html>

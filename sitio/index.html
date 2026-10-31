@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AURA Shalom™ — Un ecosistema para aprender, comprender, integrar y accionar</title>
+<meta name="description" content="AURA Shalom™ es un proyecto, metodología y ecosistema en desarrollo para aprender, unificar, reflexionar y accionar. Separar para comprender. Conectar para integrar.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0f2a5c">
+<style>
+:root{--navy:#0f2a5c;--navy2:#0a1d40;--ink:#1b2333;--muted:#4a5568;--silver:#c9ced6;--silver2:#e9ecf1;--marble:#fbfbfc;--accent:#3d7bd9;--cyan:#5fc6e8;--r:14px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--marble);
+background-image:radial-gradient(ellipse at 10% 0%,#eef1f6 0,transparent 55%),radial-gradient(ellipse at 90% 30%,#f1f2f5 0,transparent 50%),repeating-linear-gradient(115deg,rgba(15,42,92,.018) 0 2px,transparent 2px 40px)}
+a{color:var(--navy)}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:#fff;padding:8px;z-index:99}
+header.top{position:sticky;top:0;z-index:50;background:rgba(251,251,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--silver2)}
+.bar{max-width:1140px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;color:var(--navy);letter-spacing:.04em}
+.brand img{height:44px;width:auto}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.88rem;padding:6px 9px;border-radius:8px;color:var(--navy)}nav a:hover{background:var(--silver2)}
+.menu-btn{display:none;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:.95rem}
+@media(max-width:960px){.menu-btn{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--silver)}nav.open{display:block}nav ul{flex-direction:column;padding:8px 16px}nav a{display:block;padding:10px}}
+main section{padding:72px 20px;border-bottom:1px solid var(--silver2)}
+.wrap{max-width:1040px;margin:auto}
+h1,h2,h3{color:var(--navy);line-height:1.25}
+h2{font-size:clamp(1.5rem,3.2vw,2.1rem);margin:0 0 6px}
+.kicker{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.lead{font-size:1.1rem;color:var(--muted);max-width:760px}
+.hero{text-align:center;padding:64px 20px 80px;background:linear-gradient(180deg,#fff 0,transparent 100%)}
+.hero img{width:min(300px,70vw);height:auto;filter:drop-shadow(0 10px 25px rgba(15,42,92,.18))}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:18px 0 4px}
+.hero .sub{font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--navy2)}
+.motto{font-style:italic;color:var(--muted);font-size:1.1rem;margin:14px 0 26px}
+.btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600;margin:4px}
+.btn.alt{background:#fff;color:var(--navy);border:1px solid var(--silver)}
+.note{background:#fff;border-left:4px solid var(--accent);padding:12px 16px;border-radius:8px;color:var(--muted);font-size:.95rem;margin:18px 0}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:24px}
+.card{background:#fff;border:1px solid var(--silver2);border-radius:var(--r);padding:20px;box-shadow:0 2px 10px rgba(15,42,92,.05)}
+.card h3{margin:0 0 6px;font-size:1.1rem}.card p{margin:0;color:var(--muted)}
+.letter{font-size:2.4rem;font-weight:800;color:var(--navy);line-height:1;background:linear-gradient(135deg,var(--navy),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0;list-style:none}
+.tags li{background:#fff;border:1px solid var(--silver);border-radius:999px;padding:6px 12px;font-size:.92rem}
+.badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px;margin-top:10px;border:1px solid}
+.s1{color:#5b6472;border-color:#b9c0cb;background:#f3f5f8}.s2{color:#1f4f9c;border-color:#9fbbe6;background:#eef4fd}.s3{color:#7a5300;border-color:#e8c77a;background:#fff8e6}.s4{color:#11663a;border-color:#8fd0aa;background:#ecf9f1}.s5{color:#4b2a8a;border-color:#b9a4e6;background:#f4effd}
+/* Diagrama flujo */
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;margin:28px auto;max-width:620px;padding:0;list-style:none}
+.flow li{width:100%;text-align:center;background:#fff;border:1px solid var(--silver);border-radius:12px;padding:14px;font-weight:600;color:var(--navy);position:relative}
+.flow li small{display:block;font-weight:400;color:var(--muted)}
+.flow li:first-child{background:var(--navy);color:#fff}.flow li:first-child small{color:#d6def0}
+.flow li+li{margin-top:34px}
+.flow li+li::before{content:"";position:absolute;top:-30px;left:50%;width:2px;height:26px;background:linear-gradient(var(--silver),var(--accent));transform:translateX(-50%)}
+.flow li+li::after{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--accent)}
+.loop{text-align:center;color:var(--muted);font-size:.9rem}
+/* Arquitectura */
+.arch{background:#fff;border:1px solid var(--silver);border-radius:18px;padding:20px;margin-top:26px}
+.layer{border-radius:12px;padding:14px;text-align:center;margin-bottom:12px}
+.l-id{background:linear-gradient(135deg,var(--navy2),var(--navy));color:#fff}
+.l-core{background:linear-gradient(135deg,#16386f,#24569e);color:#fff}
+.l-id h3,.l-core h3{color:#fff;margin:0}.l-id p,.l-core p{margin:2px 0 0;color:#d6def0;font-size:.92rem}
+.row{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:12px}
+.node{background:var(--silver2);border:1px solid var(--silver);border-radius:10px;padding:10px;text-align:center;font-size:.92rem}
+.node b{display:block;color:var(--navy)}
+.lbl{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin:6px 0}
+.arch-body{display:grid;grid-template-columns:1fr 220px;gap:12px}
+.gov{background:#f6f8fb;border:2px dashed var(--accent);border-radius:12px;padding:12px}
+.gov h4{margin:0 0 8px;color:var(--navy);text-align:center;font-size:.95rem}
+.gov .node{margin-bottom:8px;background:#fff}
+@media(max-width:700px){.arch-body{grid-template-columns:1fr}}
+.pulse{animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(61,123,217,.0)}50%{box-shadow:0 0 0 6px rgba(61,123,217,.15)}}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;margin-top:18px;font-size:.95rem}
+th,td{padding:10px 12px;border-bottom:1px solid var(--silver2);text-align:left;vertical-align:top}th{background:var(--navy);color:#fff;font-weight:600}
+.tbl{overflow-x:auto}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+.steps li{background:#fff;border:1px solid var(--silver2);border-radius:12px;padding:14px}
+.steps li::before{counter-increment:s;content:"0" counter(s);display:block;font-weight:800;color:var(--accent)}
+details{background:#fff;border:1px solid var(--silver2);border-radius:12px;padding:12px 16px;margin-top:10px}
+summary{cursor:pointer;font-weight:600;color:var(--navy)}
+details p,details ul{color:var(--muted)}
+.principle{font-style:italic;color:var(--navy)}
+footer{background:var(--navy2);color:#d6def0;text-align:center;padding:30px 20px;font-size:.9rem}footer a{color:#fff}
+.contact{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top"><div class="bar">
+<a class="brand" href="#inicio"><img src="assets/logo-aura-480.webp" alt="Logotipo de AURA Shalom™" width="44" height="51">AURA Shalom™</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
+<nav id="nav" aria-label="Principal"><ul>
+<li><a href="#que-es">¿Qué es?</a></li><li><a href="#por-que">¿Por qué?</a></li><li><a href="#metodologia">Metodología</a></li><li><a href="#b12">Rigor B12</a></li><li><a href="#arquitectura">Arquitectura</a></li><li><a href="#areas">Áreas</a></li><li><a href="#estado">Estado</a></li><li><a href="#vision">Visión</a></li><li><a href="#contacto">Contacto</a></li>
+</ul></nav></div></header>
+
+<main id="contenido">
+<!-- 1. PORTADA -->
+<section id="inicio" class="hero">
+<img src="assets/logo-aura-960.webp" srcset="assets/logo-aura-480.webp 480w, assets/logo-aura-960.webp 960w" sizes="300px" alt="Logotipo oficial de AURA Shalom™" width="300" height="345">
+<h1>AURA Shalom™</h1>
+<p class="sub">Un ecosistema para aprender, comprender, integrar y accionar.</p>
+<p class="motto">«Separar para comprender. Conectar para integrar».</p>
+<a class="btn" href="#que-es">Conocer AURA</a><a class="btn alt" href="#estado">Ver el estado del proyecto</a>
+<p class="note" style="max-width:640px;margin:26px auto 0">AURA Shalom™ es un proyecto <strong>en desarrollo</strong>. Esta página explica qué es, qué está construyendo y hacia dónde quiere evolucionar, distinguiendo siempre lo que ya existe de lo que todavía es diseño o intención.</p>
+</section>
+
+<!-- 2. QUÉ ES -->
+<section id="que-es" class="reveal"><div class="wrap">
+<p class="kicker">01 · ¿Qué es AURA?</p>
+<h2>Un proyecto, una metodología y un ecosistema en construcción</h2>
+<p class="lead">AURA nace de la intención de convertir conocimiento, experiencia, reflexión y evidencia en procesos que permitan comprender problemas, organizar información, desarrollar soluciones y producir acciones concretas.</p>
+<p>Es un ecosistema en desarrollo que busca integrar conocimiento, metodología, tecnología, investigación, aprendizaje y proyectos bajo una misma forma de trabajar.</p>
+<div class="grid">
+<div class="card"><h3>No es una inteligencia artificial</h3><p>Puede apoyarse en herramientas de IA, pero AURA es una forma organizada de trabajar, no un programa.</p></div>
+<div class="card"><h3>No es una religión ni una iglesia</h3><p>No propone doctrinas ni pide adhesión. Respeta la autonomía de cada persona.</p></div>
+<div class="card"><h3>No es una empresa de trámites</h3><p>Servicios Shalom MX es una línea empresarial particular, distinta del ecosistema AURA.</p></div>
+</div>
+<blockquote class="note"><strong>AURA SHALOM™ es un ecosistema en evolución.</strong> Su arquitectura central, AURA, está diseñada para integrar conocimiento, metodologías, inteligencia artificial, herramientas y capacidades humanas bajo principios de gobernanza, trazabilidad, evaluación y evolución controlada.</blockquote>
+</div></section>
+
+<!-- 3. POR QUÉ -->
+<section id="por-que" class="reveal"><div class="wrap">
+<p class="kicker">02 · ¿Por qué existe?</p>
+<h2>Porque el conocimiento disperso no se convierte solo en acción</h2>
+<p class="lead">Mucha información útil se queda aislada: en notas, conversaciones, archivos o experiencias que nadie documentó. AURA busca darle estructura para que pueda comprenderse, reutilizarse y llevarse a la práctica.</p>
+<ol class="steps">
+<li>Aprender de la experiencia y del conocimiento disponible.</li>
+<li>Unificar información que se encuentra dispersa.</li>
+<li>Reflexionar y analizar antes de tomar decisiones.</li>
+<li>Accionar mediante procedimientos, proyectos y soluciones.</li>
+<li>Documentar los aprendizajes para mejorar continuamente.</li>
+<li>Desarrollar herramientas que puedan ayudar a otras personas y organizaciones.</li>
+</ol>
+<p class="note">AURA no busca sustituir el pensamiento humano, sino proporcionar estructura para fortalecerlo.</p>
+</div></section>
+
+<!-- 4. METODOLOGÍA -->
+<section id="metodologia" class="reveal"><div class="wrap">
+<p class="kicker">03 · Metodología AURA</p>
+<h2>Aprender · Unificar · Reflexionar · Accionar</h2>
+<div class="grid">
+<div class="card"><div class="letter">A</div><h3>Aprender</h3><p>Reunir experiencia, conocimiento y fuentes disponibles.</p></div>
+<div class="card"><div class="letter">U</div><h3>Unificar</h3><p>Organizar en un solo lugar lo que estaba disperso.</p></div>
+<div class="card"><div class="letter">R</div><h3>Reflexionar</h3><p>Analizar, contrastar y separar hechos de interpretaciones.</p></div>
+<div class="card"><div class="letter">A</div><h3>Accionar</h3><p>Convertir lo comprendido en procedimientos, proyectos y soluciones.</p></div>
+</div>
+<h3 style="margin-top:36px">Principios que orientan el proyecto</h3>
+<ul class="tags"><li>Honestidad intelectual</li><li>Transparencia</li><li>Evidencia y trazabilidad</li><li>Pensamiento crítico</li><li>Aprendizaje continuo</li><li>Responsabilidad</li><li>Respeto por la autonomía humana</li><li>Reconocimiento de los límites del conocimiento</li></ul>
+<p class="note"><strong>Sobre B10:</strong> B10 es el fundamento personal y espiritual del fundador, René López Barrera. Se menciona por transparencia y con respeto; no es una doctrina universal ni se impone a ningún visitante o participante.</p>
+</div></section>
+
+<!-- 5. B12 -->
+<section id="b12" class="reveal"><div class="wrap">
+<p class="kicker">04 · Rigor B12</p>
+<h2>Evidencia, pensamiento crítico y honestidad intelectual</h2>
+<p class="lead">B12 es el enfoque de rigor intelectual y documental de AURA. Su propósito es evitar que una opinión se convierta automáticamente en un hecho o que una hipótesis se presente como certeza.</p>
+<div class="tbl"><table>
+<caption class="skip">Categorías de información que distingue B12</caption>
+<thead><tr><th>Categoría</th><th>Qué significa</th></tr></thead><tbody>
+<tr><td><b>Dato</b></td><td>Información concreta registrada, todavía sin interpretar.</td></tr>
+<tr><td><b>Hecho documentado</b></td><td>Algo respaldado por una fuente verificable.</td></tr>
+<tr><td><b>Declaración</b></td><td>Lo que alguien afirma; se registra quién lo dijo.</td></tr>
+<tr><td><b>Interpretación</b></td><td>Una lectura o explicación de los datos.</td></tr>
+<tr><td><b>Hipótesis</b></td><td>Una posibilidad que aún debe comprobarse.</td></tr>
+<tr><td><b>Desconocido</b></td><td>Lo que no se sabe.</td></tr>
+<tr><td><b>No determinado</b></td><td>Lo que con la evidencia actual no puede decidirse.</td></tr>
+</tbody></table></div>
+<div class="grid">
+<div class="card"><h3>Procedencia verificable</h3><p>Toda evidencia debe poder rastrearse hasta su origen. Conservar el origen antes de construir conclusiones.</p></div>
+<div class="card"><h3>La IA es apoyo, no autoridad</h3><p>Las respuestas generadas por IA se revisan; no son una fuente independiente de verdad ni sustituyen el criterio humano.</p></div>
+<div class="card"><h3>Producir no es verificar</h3><p>Un resultado puede estar generado, revisado, aprobado, publicado o pendiente de corrección. Generarlo no significa validarlo.</p></div>
+</div>
+</div></section>
+
+<!-- 6. ARQUITECTURA -->
+<section id="arquitectura" class="reveal"><div class="wrap">
+<p class="kicker">05 · Arquitectura</p>
+<h2>Un ecosistema modular que puede crecer</h2>
+<p class="lead">Las ramas y módulos no son categorías decorativas: representan una arquitectura conceptual de desarrollo. Cada uno puede tener objetivos propios, desarrollar metodologías, organizar su información, generar proyectos, documentar resultados, compartir aprendizajes y evolucionar sin comprometer la estructura general.</p>
+
+<h3>Flujo del ecosistema</h3>
+<ol class="flow" aria-label="Flujo del ecosistema AURA, de arriba hacia abajo">
+<li class="pulse">AURA SHALOM™<small>Ecosistema central</small></li>
+<li>Metodología y principios compartidos<small>A·U·R·A, B12, principios</small></li>
+<li>Módulos especializados<small>Ramas y habilidades reutilizables</small></li>
+<li>Proyectos, experimentos y aplicaciones<small>Uso concreto de la arquitectura</small></li>
+<li>Documentación, evaluación y mejora continua<small>Lo aprendido regresa al ecosistema</small></li>
+</ol>
+<p class="loop">↺ Lo aprendido y verificado puede volver a la memoria del ecosistema. Pueden incorporarse nuevas ramas en el futuro.</p>
+
+<h3 style="margin-top:40px">Arquitectura completa</h3>
+<div class="arch" role="figure" aria-labelledby="arch-cap">
+<div class="layer l-id"><h3>AURA SHALOM™</h3><p>Identidad del ecosistema</p></div>
+<div class="layer l-core pulse"><h3>Arquitectura central AURA</h3><p>Organización y coordinación: memoria, filtros, ramas, módulos y herramientas</p></div>
+<p class="lbl">Fundamentos y filtros</p>
+<div class="row"><div class="node"><b>B10</b>Fundamentos</div><div class="node"><b>B12</b>Rigor y control</div><div class="node"><b>R1</b>Filtro personal</div></div>
+<div class="arch-body"><div>
+<p class="lbl">Organización y ejecución</p>
+<div class="row"><div class="node"><b>Memoria maestra</b>Conocimiento evaluado</div><div class="node"><b>Ramas</b>Áreas especializadas</div></div>
+<div class="row"><div class="node"><b>Módulos</b>Habilidades reutilizables</div><div class="node"><b>Proyectos</b>Aplicaciones concretas</div></div>
+</div>
+<aside class="gov" aria-label="Gobernanza transversal"><h4>Gobernanza transversal</h4>
+<div class="node">Autoridad y permisos</div><div class="node">Trazabilidad y versiones</div><div class="node">Calidad y verificación</div><div class="node">Seguridad y continuidad</div></aside>
+</div>
+<p id="arch-cap" class="note" style="margin-bottom:0"><strong>Esquema conceptual propuesto</strong>, no representación de componentes técnicamente implementados. El mapa no es el territorio: este diagrama no significa que todos sus componentes estén programados, conectados o funcionando.</p>
+</div>
+
+<h3 style="margin-top:40px">Cómo se distinguen las piezas</h3>
+<div class="tbl"><table><thead><tr><th>Pieza</th><th>Papel</th></tr></thead><tbody>
+<tr><td>AURA Shalom™</td><td>Identidad del ecosistema.</td></tr>
+<tr><td>Arquitectura central AURA</td><td>Organización y coordinación. No es una sola IA ni un programa específico; puede usar distintos modelos y herramientas con una estructura común de criterios y supervisión.</td></tr>
+<tr><td>B10, B12 y R1</td><td>Fundamentos y filtros. B10: principios rectores del fundador. B12: rigor, evidencia y trazabilidad. R1: filtro personal cuando el trabajo corresponde al ámbito de René.</td></tr>
+<tr><td>Ramas</td><td>Áreas especializadas de trabajo.</td></tr>
+<tr><td>Módulos</td><td>Habilidades operativas reutilizables entre ramas.</td></tr>
+<tr><td>Proyectos</td><td>Aplicaciones concretas de esa arquitectura.</td></tr>
+</tbody></table></div>
+
+<h3 style="margin-top:40px">Cómo está pensada para funcionar</h3>
+<p>Estas son líneas de diseño de la arquitectura, no mecanismos ya implementados.</p>
+<details><summary>Memoria maestra y gestión del conocimiento</summary><p>Una memoria organizada, actualizable y consultable que no pretende almacenar todo Internet, sino conservar conocimiento relevante que haya pasado por criterios de evaluación: fundamentos, metodologías aprobadas, investigaciones documentadas, proyectos anteriores, decisiones y sus justificaciones, procedimientos reutilizables, fuentes, versiones y correcciones. Distingue información confirmada, provisional, experimental y descartada.</p><p class="principle">Aprender no significa convertir automáticamente toda información recibida en conocimiento validado.</p></details>
+<details><summary>Filtros y preparación de tareas</summary><p>Cada tarea puede pasar por los filtros pertinentes (B10, B12, R1, filtros de cada rama y requisitos del proyecto). No todos se aplican igual a todos los trabajos; depende de su naturaleza, objetivo y límites. El sistema recupera el contexto necesario y prepara instrucciones específicas.</p></details>
+<details><summary>Módulos y habilidades reutilizables</summary><p>Ejemplos de módulos potenciales: video, audio, imágenes, documentos, investigación, desarrollo web, aplicaciones APK, dashboards, automatización, programación y diseño de prompts. Podrían desarrollarse internamente, integrarse desde código abierto, conectarse mediante APIs de terceros o usarse como servicios externos. La meta es poder cambiar de proveedor sin reconstruir la metodología.</p></details>
+<details><summary>Protocolo de ejecución e interoperabilidad</summary><p>Antes de enviar una tarea a un módulo se prepara un paquete con objetivo, contexto, instrucciones, filtros, archivos de entrada, formato de salida, restricciones y criterios de evaluación. El resultado se revisa contra esos requisitos. Los módulos reciben solo la información necesaria y autorizada.</p></details>
+<details><summary>Aprendizaje y evolución controlada</summary><p>Lo aprendido en un proyecto solo se incorpora a la memoria considerando procedencia, evidencia, utilidad, validación, aprobación, fecha y versión. Los principios fundamentales no cambian automáticamente por una investigación, una respuesta de IA o un experimento.</p></details>
+<details><summary>Interconexión entre módulos</summary><p>Los módulos pueden trabajar de forma independiente y también intercambiar resultados cuando sea útil. Por ejemplo, una investigación puede generar conocimiento que después use un módulo empresarial, tecnológico o educativo, y el aprendizaje de un proyecto puede volverse documentación reutilizable para otros. Así el conocimiento no queda aislado.</p></details>
+<details><summary>Jerarquía de autoridad</summary><p>Se distingue entre identidad y principios institucionales, decisiones de dirección, fundamentos metodológicos, normas de cada rama, instrucciones de proyecto y recomendaciones de herramientas o IA. Ningún módulo ni modelo de IA puede modificar por sí solo los fundamentos. Si hay instrucciones contradictorias, se identifica el conflicto, se conserva su procedencia y se pide resolución.</p><p class="principle">Capacidad de ejecución no significa autoridad para gobernar.</p></details>
+<details><summary>Procedencia y trazabilidad del conocimiento</summary><p>Se distinguen hechos documentados, declaraciones, observaciones, interpretaciones, hipótesis, propuestas, información experimental, información pendiente de verificación, contradicciones e información descartada con su justificación. Cada registro puede incluir fuente, fecha, autor, proyecto de procedencia, estado de validación, versión, modificaciones y relaciones. Las versiones anteriores no desaparecen al actualizarse.</p><p class="principle">Conservar el origen antes de construir conclusiones.</p></details>
+<details><summary>Seguridad, privacidad y control de acceso</summary><p>Niveles de información pública, privada, confidencial y restringida; autorizaciones para consultar, modificar o transmitir; protección de datos personales; separación entre memoria central y espacios externos; registro de operaciones y revocación de permisos.</p><p class="principle">Compartir capacidades no significa compartir toda la información.</p></details>
+<details><summary>Control de versiones</summary><p>Los cambios importantes registran versión anterior, cambio propuesto, motivo, elementos afectados, responsable, fecha, estado de aprobación y resultado. Se pueden comparar y recuperar versiones; las actualizaciones no alteran en silencio los fundamentos.</p><p class="principle">Evolucionar sin perder la historia.</p></details>
+<details><summary>Evaluación y control de calidad</summary><p>Los resultados se revisan según objetivo, exactitud, calidad técnica, consistencia, fuentes, restricciones, errores y necesidad de revisión humana. Se distingue entre resultado generado, revisado, aprobado, publicado y pendiente de corrección.</p><p class="principle">Producir no equivale a verificar.</p></details>
+<details><summary>Continuidad y resiliencia</summary><p>Sustitución de proveedores, respaldos, recuperación de versiones, documentación de dependencias, procedimientos alternativos, exportación y migración entre plataformas. Si una herramienta externa deja de funcionar, no se pierden los fundamentos, metodologías ni documentación.</p><p class="principle">Ninguna herramienta individual debe convertirse en un punto único de dependencia.</p></details>
+<details><summary>Inteligencia artificial y colaboración humana</summary><ul><li>La IA no sustituye el criterio humano.</li><li>Las respuestas generadas por IA se someten a revisión.</li><li>Las fuentes originales se conservan cuando son relevantes.</li><li>Las conclusiones se distinguen de las interpretaciones.</li><li>La responsabilidad de cada decisión queda identificada.</li></ul><p>A las herramientas utilizadas no se les atribuye conciencia ni autonomía.</p></details>
+</div></section>
+
+<!-- 7. ÁREAS -->
+<section id="areas" class="reveal"><div class="wrap">
+<p class="kicker">06 · Áreas de desarrollo</p>
+<h2>Ramas especializadas del ecosistema</h2>
+<p class="lead">Estos nombres representan líneas de trabajo y arquitectura conceptual. No están terminadas ni disponibles como servicio.</p>
+<div class="grid" id="ramas">
+<div class="card"><h3>AURA Personal</h3><p>Aprendizaje, autoconocimiento y desarrollo de procesos personales.</p><span class="badge s1">Conceptual</span></div>
+<div class="card"><h3>AURA Empresarial</h3><p>Organización, administración, estrategia y desarrollo de negocios.</p><span class="badge s1">Conceptual</span></div>
+<div class="card"><h3>AURA Espiritual</h3><p>Investigación y reflexión sobre fundamentos, conciencia, experiencia y evidencia.</p><span class="badge s1">Conceptual</span></div>
+<div class="card"><h3>AURA Investigación</h3><p>Análisis de información, acontecimientos, documentos y fuentes.</p><span class="badge s1">Conceptual</span></div>
+<div class="card"><h3>AURA Tecnología</h3><p>Herramientas digitales, automatización, inteligencia artificial y ciberseguridad.</p><span class="badge s1">Conceptual</span></div>
+<div class="card"><h3>AURA Proyectos</h3><p>Diseño, experimentación, documentación y desarrollo de iniciativas.</p><span class="badge s1">Conceptual</span></div>
+<div class="card" style="border-style:dashed"><h3>Nuevas ramas</h3><p>La arquitectura está pensada para incorporar más ramas en el futuro.</p><span class="badge s1">Conceptual</span></div>
+</div>
+<p class="note">Servicios Shalom MX es una línea empresarial particular, independiente de estas ramas. Su sitio: <a href="https://aurashalom.netlify.app" rel="noopener">aurashalom.netlify.app</a>.</p>
+</div></section>
+
+<!-- 8. ESTADO -->
+<section id="estado" class="reveal"><div class="wrap">
+<p class="kicker">07 · Estado del proyecto</p>
+<h2>Qué existe y qué sigue en construcción</h2>
+<p class="lead">AURA está en desarrollo. Cada componente se identifica según su estado real; un mismo componente puede tener capacidades en estados distintos.</p>
+<div class="grid">
+<div class="card"><b>01</b> <span class="badge s1">Conceptual</span><p>Existe como idea, principio o propuesta arquitectónica.</p></div>
+<div class="card"><b>02</b> <span class="badge s2">Diseñado</span><p>Cuenta con estructura, documentación y especificaciones definidas.</p></div>
+<div class="card"><b>03</b> <span class="badge s3">En desarrollo</span><p>Se está construyendo o integrando técnicamente.</p></div>
+<div class="card"><b>04</b> <span class="badge s4">Operativo</span><p>Existe y puede utilizarse, aunque puede tener limitaciones.</p></div>
+<div class="card"><b>05</b> <span class="badge s5">Validado</span><p>Probado bajo criterios definidos, con evidencia de funcionamiento.</p></div>
+</div>
+<div class="tbl"><table><thead><tr><th>Componente</th><th>Estado actual</th></tr></thead><tbody>
+<tr><td>Identidad, lema y metodología A·U·R·A</td><td><span class="badge s2">Diseñado</span> Fundamentos definidos y documentados.</td></tr>
+<tr><td>Rigor B12 (categorías de información)</td><td><span class="badge s2">Diseñado</span> Metodología en construcción.</td></tr>
+<tr><td>Arquitectura central AURA</td><td><span class="badge s1">Conceptual</span> Propuesta arquitectónica.</td></tr>
+<tr><td>Memoria maestra</td><td><span class="badge s1">Conceptual</span></td></tr>
+<tr><td>Gobernanza transversal (permisos, versiones, calidad, seguridad)</td><td><span class="badge s1">Conceptual</span> Línea de desarrollo, no plataforma implementada.</td></tr>
+<tr><td>AURA IA (software para Windows sobre motor local Llama)</td><td><span class="badge s3">En desarrollo</span> Primera aplicación técnica en construcción.</td></tr>
+<tr><td>Ramas especializadas</td><td><span class="badge s1">Conceptual</span></td></tr>
+<tr><td>Módulos de habilidades</td><td><span class="badge s1">Conceptual</span></td></tr>
+<tr><td>Experimentos y pilotos</td><td>Sus resultados están <strong>pendientes de validación</strong>; no son resultados científicamente demostrados.</td></tr>
+</tbody></table></div>
+<p class="note">Hoy ningún componente se presenta como <em>Operativo</em> ni <em>Validado</em>. Los estados se actualizarán solo cuando exista evidencia.</p>
+</div></section>
+
+<!-- 9. VISIÓN -->
+<section id="vision" class="reveal"><div class="wrap">
+<p class="kicker">08 · Visión a futuro</p>
+<h2>Hacia una metodología reproducible</h2>
+<p class="lead">AURA aspira a desarrollar una metodología reproducible de aprendizaje, investigación, integración de conocimiento y ejecución de proyectos. Es una aspiración, no una realidad ya conseguida.</p>
+<p>Su crecimiento deberá depender de:</p>
+<ul class="tags"><li>Experiencia documentada</li><li>Metodologías evaluables</li><li>Resultados verificables</li><li>Mejora continua</li><li>Colaboración responsable</li><li>Capacidad de adaptación</li></ul>
+<p class="note"><strong>Rigor intelectual + arquitectura modular + propósito humano.</strong></p>
+</div></section>
+
+<!-- 10. CONTACTO -->
+<section id="contacto" class="reveal"><div class="wrap">
+<p class="kicker">09 · Contacto y autoría</p>
+<h2>Autoría transparente</h2>
+<p class="lead">AURA Shalom™ es impulsado por <strong>René López Barrera</strong>, fundador y responsable del desarrollo del proyecto. AURA tiene identidad, metodología y objetivos propios: la experiencia del fundador es punto de partida y campo de experimentación, no un resultado universal.</p>
+<div class="contact">
+<div class="card"><h3>AURA Shalom™</h3><p><a href="mailto:aura.shalom.mx@gmail.com">aura.shalom.mx@gmail.com</a></p></div>
+<div class="card"><h3>Servicios Shalom (línea empresarial aparte)</h3><p><a href="mailto:multiservicios.shalom.mx@gmail.com">multiservicios.shalom.mx@gmail.com</a><br><a href="https://aurashalom.netlify.app" rel="noopener">aurashalom.netlify.app</a></p></div>
+</div>
+</div></section>
+</main>
+<footer><p>AURA SHALOM™ · «Separar para comprender. Conectar para integrar».</p><p>© <span id="y">2026</span> René López Barrera. Proyecto en desarrollo; los diagramas son esquemas conceptuales.</p></footer>
+<script>
+const b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
+b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded',false)}));
+document.getElementById('y').textContent=new Date().getFullYear();
+const els=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window&&!location.search.includes('captura')){const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.08});els.forEach(e=>io.observe(e))}else els.forEach(e=>e.classList.add('on'));
+</script>
+</body></html>

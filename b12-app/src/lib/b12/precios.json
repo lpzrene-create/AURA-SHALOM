@@ -1,0 +1,38 @@
+{
+  "aviso": "Montos no publicados. Pendientes de aprobación de René López Barrera. Requiere cotización expresa.",
+  "moneda": "MXN",
+  "iva": 0.16,
+  "estado": "PENDIENTE_APROBACION_USUARIO",
+  "niveles": {
+    "0": {
+      "nombre": "Diagnóstico inicial",
+      "base": null,
+      "modulo": null
+    },
+    "1": {
+      "nombre": "Básico",
+      "base": null,
+      "modulo": null
+    },
+    "2": {
+      "nombre": "Estándar",
+      "base": null,
+      "modulo": null
+    },
+    "3": {
+      "nombre": "Profesional",
+      "base": null,
+      "modulo": null
+    },
+    "4": {
+      "nombre": "Corporativo",
+      "base": null,
+      "modulo": null
+    },
+    "5": {
+      "nombre": "Proyecto personalizado",
+      "base": null,
+      "modulo": null
+    }
+  }
+}

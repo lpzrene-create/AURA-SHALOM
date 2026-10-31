@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  --color-navy: #002b49;
+  --color-navy-mid: #0a3d63;
+  --color-navy-deep: #001a2d;
+  --color-gold: #d4af37;
+  --color-gold-soft: #e4c96a;
+  --color-paper: #f4f6f9;
+  --color-card: #ffffff;
+  --color-ink: #1f2937;
+  --color-muted: #6b7280;
+  --color-line: #e5e7eb;
+  --color-danger: #8f2d2d;
+  --color-ok: #86efac;
+
+  --color-b12-hecho: #1b5e20;
+  --color-b12-hecho-bg: #e8f5e9;
+  --color-b12-azul: #0d47a1;
+  --color-b12-azul-bg: #e3f2fd;
+  --color-b12-gris: #455a64;
+  --color-b12-gris-bg: #eceff1;
+  --color-b12-ambar: #8a5a18;
+  --color-b12-ambar-bg: #fff8e1;
+  --color-b12-rojo: #b71c1c;
+  --color-b12-rojo-bg: #ffebee;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  nav,
+  footer,
+  header .hidden,
+  a[href="#contenido"] {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
